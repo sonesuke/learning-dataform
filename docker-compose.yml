@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  dataform:
+    build:
+      context: ./
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "sample"
+    ports:
+      - "5432:5432"
+    command: "postgres -c ssl=on -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key"
+    volumes:
+      - ./app:/app
+    working_dir: /app

@@ -1,0 +1,11 @@
+config {
+  type: 'view',
+    assertions: {
+      uniqueKey: ['"テストID"', '"例ID"'],
+      nonNull: ['"テストID"', '"例ID"'],
+      }
+}
+
+SELECT
+  1 AS "テストID",
+  2 AS "例ID"
